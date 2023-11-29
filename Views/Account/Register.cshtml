@@ -1,0 +1,55 @@
+﻿@model RegistrationViewModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h1>Регистрация </h1>
+
+<form method="post" asp-controller="Account" asp-action="Register"> 
+	<div asp-validation-summary="All" class="text-danger">
+
+	</div>
+
+	<div class="form-group"> 
+	<label asp-for="FullName">FullName</label>  
+	<input class="form-control" asp-for="FullName" placeholder="Enter FullName">  
+	<span asp-validation-for="FullName"  class="form-text text-danger"></span> 
+
+</div> 
+<div class="form-group"> 
+	<label asp-for="Year">Year</label>
+		<input class="form-control" asp-for="Year" placeholder="Year">
+		<span asp-validation-for="Year" class="form-text text-danger"></span>
+
+	</div> 
+
+<div class="form-group">
+		<label asp-for="Email">Email</label>
+		<input class="form-control" asp-for="Email" placeholder="Email">
+		<span asp-validation-for="Email" class="form-text text-danger"></span>
+
+	</div>
+
+	<div class="form-group">
+		<label asp-for="Password">Password</label>
+		<input class="form-control" asp-for="Password" placeholder="Password">
+		<span asp-validation-for="Password" class="form-text text-danger"></span>
+
+	</div> 
+
+	<div class="form-group">
+		<label asp-for="RepeatPassword">RepeatPassword</label>
+		<input class="form-control" asp-for="RepeatPassword" placeholder="RepeatPassword">
+		<span asp-validation-for="RepeatPassword" class="form-text text-danger"></span>
+
+	</div>
+		
+
+	<button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
+
+@section Scripts
+{
+	<partial name="_ValidationScriptsPartial"> </partial>
+}
